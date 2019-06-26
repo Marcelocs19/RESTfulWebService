@@ -12,11 +12,19 @@ public class QuoteController {
 
 	private static final Logger log = LoggerFactory.getLogger(QuoteController.class);
 	
+	private QuoteService qs;
+	
+	public QuoteController(RestTemplate restTemplate) {
+		qs = new QuoteService(restTemplate);
+	}
+	
 	@GetMapping("/quotes")
 	public String showQuote(RestTemplate restTemplate, Model model) {
-		Quote quote = restTemplate.getForObject("https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+		Quote quote = qs.getQuote();
 		log.info(quote.toString());
 		model.addAttribute("q",quote);
 		return "quoteDetails";
 	}
+
+
 }
