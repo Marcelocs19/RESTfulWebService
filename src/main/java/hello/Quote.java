@@ -11,6 +11,10 @@ public class Quote {
     public Quote() {
     }
 
+    public String getPhrase() {
+    	return value.getPhrase();
+    }
+    
     public String getType() {
         return type;
     }

@@ -16,9 +16,10 @@ public class QuoteController {
 	@Autowired
 	private QuoteService qs;
 	
-	public QuoteController(QuoteService quoteService) {
-		qs = quoteService;
-	}
+// não precisa por causa do @Autowired	
+//	public QuoteController(QuoteService quoteService) {
+//		qs = quoteService;
+//	}
 	
 	@GetMapping("/quotes")
 	public String showQuote(RestTemplate restTemplate, Model model) {
