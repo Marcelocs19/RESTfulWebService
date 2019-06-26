@@ -4,9 +4,10 @@ import org.springframework.web.client.RestTemplate;
 
 public class QuoteService {
 	
+	
 	private RestTemplate restTemplate;
 	
-		
+
 	public QuoteService(RestTemplate restTemplate) {
 		super();
 		this.restTemplate = restTemplate;

@@ -23,5 +23,11 @@ public class BootApplication {
 		return builder.build();
 	}
 
+	@Bean
+	public QuoteService quoteService(RestTemplate restTemplate) {
+		log.info(" *** **** Creating a Quote service");
+		return new QuoteService(restTemplate);
+	}
+	
 
 }
